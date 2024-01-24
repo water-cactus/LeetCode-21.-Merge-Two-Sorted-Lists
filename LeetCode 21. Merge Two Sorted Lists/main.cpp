@@ -1,5 +1,5 @@
 #include <iostream>
-struct ListNode * Merge(ListNode* L, ListNode* R);
+struct ListNode * mergeTwoLists(ListNode* L, ListNode* R);
 
 struct ListNode {
     int val;
@@ -17,12 +17,12 @@ int main() {
     ListNode R1(6);
     ListNode R2(5, &R1);
     ListNode R3(4, &R2);
-    ListNode * ANS = Merge(&L3, &R3);
+    ListNode * ANS = mergeTwoLists(&L3, &R3);
 
 	return 0;
 }
 
-struct ListNode * Merge(ListNode * L, ListNode * R) {
+struct ListNode * mergeTwoLists(ListNode * L, ListNode * R) {
     ListNode* head, * temp;
     head = new ListNode();
     temp = head;
@@ -41,7 +41,7 @@ struct ListNode * Merge(ListNode * L, ListNode * R) {
     }
     if (L) { temp->next = L; }
     if (R) { temp->next = R; }
-    return head;
+    return head->next;
 }
 
 
